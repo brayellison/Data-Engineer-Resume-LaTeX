@@ -154,16 +154,33 @@
 % Command for printing skill progress bars
 \newcommand\programming[1]{ 
 	\renewcommand{\programming}{
-		\begin{tikzpicture}
-        	\node [above right] at (0, 4) {$0 \: LOC \: \arrow{3.2} \: 5000 \: LOC$};
-			\foreach [count=\i] \x/\y in {#1}{
-				\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+0.4);
-				\draw[fill=white,mainblue](0,\i) rectangle (\y,\i+0.4);
-				\node [above right] at (0,\i+0.35) {\x};
-			}
-		\end{tikzpicture}
+%		\begin{tikzpicture}
+        	%\node [above right] at (0, 4) {$0 \: LOC \: \arrow{3.2} \: 5000 \: LOC$};
+%			\foreach [count=\i] \x/\y in {#1}{
+		\foreach [count=\i] \x in {#1}{
+%				\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+0.4);
+%				\draw[fill=white,mainblue](0,\i) rectangle (\y,\i+0.4);
+%			\node [above right] at (0,\i+0.35) {\x};
+			{\x\\}
+		}
+%		\end{tikzpicture}
 	}
 }
+\newcommand\software[1]{ 
+\renewcommand{\software}{
+	%		\begin{tikzpicture}
+	%\node [above right] at (0, 4) {$0 \: LOC \: \arrow{3.2} \: 5000 \: LOC$};
+	%			\foreach [count=\i] \x/\y in {#1}{
+	\foreach [count=\i] \x in {#1}{
+		%				\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+0.4);
+		%				\draw[fill=white,mainblue](0,\i) rectangle (\y,\i+0.4);
+		%			\node [above right] at (0,\i+0.35) {\x};
+		{\x\\}
+	}
+	%		\end{tikzpicture}
+}
+}
+
 \newcommand\education[1]{ 
 	\renewcommand{\education}{
 		{#1}
@@ -243,20 +260,27 @@
     \vspace{3mm}
     \profilesection{Technical Skills}{1.2cm}
     
-    {\large \textbf{Overview}}
-
-	\skills
+	    {\large \textbf{Overview}}
+	
+		\skills\\
         
         %------------------------------------------------
         
-        \vspace{3mm}
+%        \vspace{3mm}
        
-	 {\large \textbf{Programming}} 
+	 	{\large \textbf{Programming}} 
 
-		 \programming
+		\programming
          
-        \vspace{3mm}
-        \profilesection{Education}{3cm} 
+%        \vspace{3mm}
+        
+        {\large \textbf{Software}} 
+        
+        \software
+        
+%        \vspace{3mm}
+        
+    \profilesection{Education}{3cm} 
         
         \education
       
